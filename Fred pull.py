@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-20170306
+
 
 Script to pull macroeconomic indicator data from FRED website though fredapi
 Add series name, the FRED code and Divide/None to metric_list to add a new series.
@@ -18,7 +18,7 @@ from fredapi import Fred
 import pandas as pd
 
 #Hello fred. Use you own api!
-fred = Fred(api_key='3d13cbf62e6b9da77eae2788ab8bb3cc')
+fred = Fred(api_key='92384uru2f2bu8fb28fb82eb82eb')
 
 # exhaustive list of series to track
 metric_list = {
@@ -50,7 +50,7 @@ metric_list = {
     'Share of GDP Net exports quarterly':['A019RE1Q156NBEA','Divide'],
     'Share of GDP Private domestic investments quarterly':['A006RE1Q156NBEA','Divide'],
     'Share of GDP Personal consumer expenditures quarterly':['DPCERE1Q156NBEA','Divide'],
-    'Share of GDP Government expenditure quarterly':['A822RE1Q156NBEA','Divide']   
+    'Share of GDP Government expenditure quarterly':['A822RE1Q156NBEA','Divide']   #Keep adding series
     }
 
 
@@ -74,7 +74,7 @@ for metric in metric_list:
 output_df = pd.DataFrame.from_dict(data_set)
 
 # export to file
-output_df.to_csv('G:/RevNetworkAnalysis/Economic & Industry Analysis/Projects/FRED data/FRED pull.csv', index = True)
+output_df.to_csv('FRED pull.csv', index = True)
 
 # print done
 print("-------------------------------Done!-------------------------------")
